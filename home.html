@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS TEST</title>
+  <link rel="stylesheet" href="css/css.css" />
+
+</head>
+
+<body>
+  <h1>
+    На этой странице <br />
+    вы можете проверить слово на палиндром!!!
+  </h1>
+  <label>Число или слово</label>
+
+  <form name="forml">
+    <pre>
+
+        Введите строку: <input type="text" name="data" size="50" placeholder="Например : анна или 313"><hr>  
+         
+        Результат: <input type="text" name="res" size="30"><hr>  
+         
+        <input type="button" value="0пpeдeлить" onclick="pal(forml)"><hr>  
+         
+        <input type="reset" value="Отменить">  
+         
+        </pre>
+  </form>
+  <script language="JavaScript">
+    function pal(form) {
+
+      var text = form.data.value.toLowerCase().replace(/\s+/g, "");
+      var p1 = 0,
+        p2 = text.length - 1;
+
+      while (p1 < p2)
+        if (text.charAt(p1++) != text.charAt(p2--)) {
+          form.res.value = "не является палиндромом";
+          return;
+        }
+      form.res.value = "палиндром";
+    }
+  </script>
+</body>
+
+</html>
